@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad"
+    tools:context=".fetchedData">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/disp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:fontFamily="casual"
+        android:textSize="20dp"
+        android:text="Seems like you are"
+
+        />
+
+    <TextView
+        android:id="@+id/fetchOne"
+        android:layout_below="@+id/disp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:textSize="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/save"
+        android:text="Save to database"
+        android:background="@drawable/btnshape"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/fetchOne"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view"
+        android:text="View Trends"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btnshape"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:layout_below="@+id/fetchOne"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chart"
+        android:text="View Trends"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btnshape"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:layout_below="@+id/view"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/disp2"
+        android:layout_below="@id/chart"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:fontFamily="casual"
+        android:text="or maybe watch a video instead?"
+        />
+
+    <!-- <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/yes"
+         android:text="Play"
+         android:background="@drawable/btnshape"
+         android:layout_below="@+id/disp2"
+         android:layout_alignParentLeft="true"
+         android:layout_marginLeft="50dp"
+         android:paddingLeft="40dp"
+         android:paddingRight="40dp"
+         />-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/work"
+        android:text="Work"
+        android:background="@drawable/btnshape"
+        android:layout_below="@+id/disp2"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+
+        android:paddingLeft="43dp"
+        android:paddingRight="43dp"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relationship"
+        android:text="Relationship"
+        android:background="@drawable/btnshape"
+        android:layout_below="@+id/disp2"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/education"
+        android:text="Education"
+        android:background="@drawable/btnshape"
+        android:layout_below="@+id/relationship"
+        android:layout_alignParentLeft="true"
+
+        android:layout_marginTop="10dp"
+        android:paddingLeft="29dp"
+        android:paddingRight="29dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finance"
+        android:text="Finance"
+        android:background="@drawable/btnshape"
+        android:layout_below="@+id/relationship"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        />
+
+
+</RelativeLayout>
