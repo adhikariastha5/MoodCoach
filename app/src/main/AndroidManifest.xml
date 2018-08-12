@@ -39,7 +39,16 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".graphActivity"></activity>
+        <activity android:name=".graphActivity" />
+        <activity android:name=".activity_sadwork" />
+        <activity android:name=".sadrelationship" />
+        <activity android:name=".sadeducation" />
+        <activity android:name=".sadfinance" />
+        <activity android:name=".happy" />
+        <activity android:name=".anger" />
+        <activity android:name=".bored" />
+        <activity android:name=".fear" />
+        <activity android:name=".neutral"></activity>
     </application>
 
 </manifest>

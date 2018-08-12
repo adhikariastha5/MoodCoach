@@ -13,36 +13,40 @@ import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class YTplayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
+public class YTplayer extends YouTubeBaseActivity {
 
     public static final String API_KEY="AIzaSyBpUqwniJDl8m5k3figLJ0HAfW8NHgltgU";
 
-    public static String VIDEO_ID;
+    public static String getApiKey(){
+        return API_KEY;
+    }
+
+    //public static String VIDEO_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ytplayer);
 
-        VIDEO_ID=getIntent().getStringExtra("vidid");
+        //VIDEO_ID=getIntent().getStringExtra("vidid");
         //Log.d("video",VIDEO_ID);
         /** Initializing YouTube Player View **/
-        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubeplayer);
-        youTubePlayerView.initialize(API_KEY, this);
+        //YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubeplayer);
+        //youTubePlayerView.initialize(API_KEY, this);
 
 
     }
 
-    @Override
+   /* @Override
     public void onInitializationFailure(Provider provider, YouTubeInitializationResult result) {
         Toast.makeText(this, "Failured to Initialize!", Toast.LENGTH_LONG).show();
     }
     @Override
     public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
-/** add listeners to YouTubePlayer instance **/
+*//** add listeners to YouTubePlayer instance **//*
         player.setPlayerStateChangeListener(playerStateChangeListener);
         player.setPlaybackEventListener(playbackEventListener);
-/** Start buffering **/
+*//** Start buffering **//*
         if (!wasRestored) {
             player.cueVideo(VIDEO_ID);
 
@@ -90,5 +94,5 @@ public class YTplayer extends YouTubeBaseActivity implements YouTubePlayer.OnIni
         @Override
         public void onVideoStarted() {
         }
-    };
+    };*/
 }

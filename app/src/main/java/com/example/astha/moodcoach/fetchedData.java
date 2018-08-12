@@ -24,15 +24,11 @@ public class fetchedData extends AppCompatActivity implements View.OnClickListen
     String t1 = "";
     String resp, two;
     TextView fetch, disp, disp2;
-    Button btnYes,save,view,dispChart;
+    Button btnYes,save,view;
     Button work, rship, finance, education;
     DatabaseHelper myDb;
 
-    String[] sad = {"6S9E0MVteEc", "DdHB7V6sGFo", "K8BGkoJv6gg", "TLoDa3d6rCk"};
-    String[] happy = {"_R6R62qUgIs", "nb6B2lzUqMI", "R7iN71uJcG0", "EUoKyjBIoE8"};
-    String[] fear = {"SUEK9Sab4Vs", "VQXyYumRXUk", "ztkmSCsrD80", "2cYoQQDOOgU"};
-    String[] bored = {"ynvmecumJMg", "xzDPbrrTQys", "UGPxfizP1aI", "7dcc1LXx64s"};
-    String[] angry = {"3J-cYxxHQGQ", "LNyJgNjCDuU", "VaoV1PrYft4", "fQNFMxYxFSQ"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +40,7 @@ public class fetchedData extends AppCompatActivity implements View.OnClickListen
         disp = (TextView) findViewById(R.id.disp);
         disp2 = (TextView) findViewById(R.id.disp2);
         view=(Button) findViewById(R.id.view);
-        dispChart=(Button) findViewById(R.id.chart);
+        //dispChart=(Button) findViewById(R.id.chart);
         //btnYes=(Button) findViewById(R.id.yes);
         //btnYes.setOnClickListener(this);
         work = (Button) findViewById(R.id.work);
@@ -65,7 +61,7 @@ public class fetchedData extends AppCompatActivity implements View.OnClickListen
 
     void fetchingData() {
 
-        final String URL = "http://7780a6c7.ngrok.io/predict";
+        final String URL = "http://d96d7a1c.ngrok.io/predict";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
@@ -100,75 +96,101 @@ public class fetchedData extends AppCompatActivity implements View.OnClickListen
 
         }else if(V.getId()==R.id.view){
             viewall();
-        }else if(V.getId()==R.id.chart){
-            goGraph();
-
-            /*Intent i=new Intent(fetchedData.this,graphActivity.class);
-            startActivity(i);*/
         }
+
+
         else {
 
-            Intent i = new Intent(fetchedData.this, YTplayer.class);
-
             Log.d("id", two + " " + String.valueOf(V.getId()));
-            if (V.getId() == R.id.work) {
 
-            }
             if (V.getId() == R.id.work) {
                 if (two.equalsIgnoreCase("happy"))
-                    i.putExtra("vidid", happy[0]);
+                    startActivity(new Intent(fetchedData.this,happy.class));
+                    //i.putExtra("vidid", happy[0]);
                 else if (two.equalsIgnoreCase("sad"))
-                    i.putExtra("vidid", sad[0]);
+                    startActivity(new Intent(fetchedData.this,activity_sadwork.class));
                 else if (two.equalsIgnoreCase("angry"))
-                    i.putExtra("vidid", angry[0]);
+                    //i.putExtra("vidid", angry[0]);
+                    startActivity(new Intent(fetchedData.this,anger.class));
                 else if (two.equalsIgnoreCase("bored"))
-                    i.putExtra("vidid", bored[0]);
+                    //i.putExtra("vidid", bored[0]);
+                    startActivity(new Intent(fetchedData.this,bored.class));
                 else if (two.equalsIgnoreCase("fear"))
-                    i.putExtra("vidid", fear[0]);
+                    //i.putExtra("vidid", fear[0]);
+                    startActivity(new Intent(fetchedData.this,fear.class));
+                else if (two.equalsIgnoreCase("neutral"))
+                    //i.putExtra("vidid", fear[0]);
+                    startActivity(new Intent(fetchedData.this,neutral.class));
 
 
-            } else if (V.getId() == R.id.relationship) {
+            }else if (V.getId() == R.id.relationship) {
+
                 if (two.equalsIgnoreCase("happy"))
-                    i.putExtra("vidid", happy[1]);
+
+                    startActivity(new Intent(fetchedData.this,happy.class));
                     //happy[0].split(",")
                 else if (two.equalsIgnoreCase("sad"))
-                    i.putExtra("vidid", sad[1]);
+                    startActivity(new Intent(fetchedData.this,sadrelationship.class));
+
                 else if (two.equalsIgnoreCase("angry"))
-                    i.putExtra("vidid", angry[1]);
+                    //i.putExtra("vidid", angry[1]);
+                    startActivity(new Intent(fetchedData.this,anger.class));
                 else if (two.equalsIgnoreCase("bored"))
-                    i.putExtra("vidid", bored[1]);
+                    //i.putExtra("vidid", bored[1]);
+                    startActivity(new Intent(fetchedData.this,bored.class));
                 else if (two.equalsIgnoreCase("fear"))
-                    i.putExtra("vidid", fear[1]);
+                    //i.putExtra("vidid", fear[1]);
+                    startActivity(new Intent(fetchedData.this,fear.class));
+                else if (two.equalsIgnoreCase("neutral"))
+                    //i.putExtra("vidid", fear[0]);
+                    startActivity(new Intent(fetchedData.this,neutral.class));
 
 
             } else if (V.getId() == R.id.finance) {
                 if (two.equalsIgnoreCase("happy"))
-                    i.putExtra("vidid", happy[2]);
+                    //i.putExtra("vidid", happy[2]);
+                    startActivity(new Intent(fetchedData.this,happy.class));
                 else if (two.equalsIgnoreCase("sad"))
-                    i.putExtra("vidid", sad[2]);
+                    //i.putExtra("vidid", sad[2]);
+                    startActivity(new Intent(fetchedData.this,sadfinance.class));
                 else if (two.equalsIgnoreCase("angry"))
-                    i.putExtra("vidid", angry[2]);
+                    //i.putExtra("vidid", angry[2]);
+                    startActivity(new Intent(fetchedData.this,anger.class));
                 else if (two.equalsIgnoreCase("bored"))
-                    i.putExtra("vidid", bored[2]);
+                    //i.putExtra("vidid", bored[2]);
+                    startActivity(new Intent(fetchedData.this,bored.class));
                 else if (two.equalsIgnoreCase("fear"))
-                    i.putExtra("vidid", fear[2]);
+                    //i.putExtra("vidid", fear[2]);
+                    startActivity(new Intent(fetchedData.this,fear.class));
+                else if (two.equalsIgnoreCase("neutral"))
+                    //i.putExtra("vidid", fear[0]);
+                    startActivity(new Intent(fetchedData.this,neutral.class));
 
             } else if (V.getId() == R.id.education) {
                 if (two.equalsIgnoreCase("happy"))
-                    i.putExtra("vidid", happy[3]);
+                    //i.putExtra("vidid", happy[3]);
+                    startActivity(new Intent(fetchedData.this,happy.class));
                 else if (two.equalsIgnoreCase("sad"))
-                    i.putExtra("vidid", sad[3]);
+                    //i.putExtra("vidid", sad[3]);
+
+                    startActivity(new Intent(fetchedData.this,sadeducation.class));
                 else if (two.equalsIgnoreCase("angry"))
-                    i.putExtra("vidid", angry[3]);
+                    //i.putExtra("vidid", angry[3]);
+                    startActivity(new Intent(fetchedData.this,anger.class));
                 else if (two.equalsIgnoreCase("bored"))
-                    i.putExtra("vidid", bored[3]);
+                    //i.putExtra("vidid", bored[3]);
+                    startActivity(new Intent(fetchedData.this,bored.class));
                 else if (two.equalsIgnoreCase("fear"))
-                    i.putExtra("vidid", fear[3]);
+                    //i.putExtra("vidid", fear[3]);
+                    startActivity(new Intent(fetchedData.this,fear.class));
+                else if (two.equalsIgnoreCase("neutral"))
+                    //i.putExtra("vidid", fear[0]);
+                    startActivity(new Intent(fetchedData.this,neutral.class));
 
 
             }
             //i.putExtra("force_fullscreen",true);
-            startActivity(i);
+            //startActivity(i);
         }
 
     }

@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                             pushData();
 
                             editText2.setText("");
+                            Toast.makeText(MainActivity.this,"Please wait for a second.", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     void pushData(){
 
 
-       String myURL="https://7780a6c7.ngrok.io/addone";
+       String myURL="https://d96d7a1c.ngrok.io/addone";
        StringRequest sq = new StringRequest(Request.Method.POST, myURL, new Response.Listener<String>() {
            @Override
            public void onResponse(String response) {

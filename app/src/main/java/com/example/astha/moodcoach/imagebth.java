@@ -56,23 +56,20 @@ public class imagebth extends AppCompatActivity implements View.OnClickListener 
         if(V.getId()==R.id.proceed){
             Intent i = new Intent(imagebth.this, MainActivity.class);
             startActivity(i);
-        }else {
-
-            Intent i = new Intent(imagebth.this, YTplayer.class);
-            if (V.getId() == R.id.happiness) {
-                i.putExtra("vidid", happy[1]);
-            } else if (V.getId() == R.id.sadness) {
-                i.putExtra("vidid", sad[1]);
-            } else if (V.getId() == R.id.boredom) {
-                i.putExtra("vidid", bored[1]);
-            } else if (V.getId() == R.id.anger) {
-                i.putExtra("vidid", angry[1]);
-            } else if (V.getId() == R.id.fear) {
-                i.putExtra("vidid", fear[1]);
-            } else if (V.getId() == R.id.neutral) {
-                i.putExtra("vidid", neutral[2]);
-            }
-            startActivity(i);
+        }else if (V.getId() == R.id.happiness) {
+            startActivity(new Intent(imagebth.this,happy.class));
+        } else if (V.getId() == R.id.sadness) {
+                startActivity(new Intent(imagebth.this,activity_sadwork.class));
+        } else if (V.getId() == R.id.boredom) {
+                startActivity(new Intent(imagebth.this,happy.class));
+        } else if (V.getId() == R.id.anger) {
+                startActivity(new Intent(imagebth.this,anger.class));
+        } else if (V.getId() == R.id.fear) {
+                startActivity(new Intent(imagebth.this,fear.class));
+        } else if (V.getId() == R.id.neutral) {
+                startActivity(new Intent(imagebth.this,neutral.class));
         }
+
     }
+
 }
